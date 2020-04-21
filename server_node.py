@@ -21,8 +21,8 @@ def execute(cmd: Union[list, str]):
         for x in p.stdout:
             print(x.strip().decode('utf-8'))
         p.wait()
-    if p.returncode != 0:
-        print('oops')
+        if p.returncode != 0:
+            logging.critical(command + " failed!")
 
 
 def create_venv():
