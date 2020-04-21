@@ -10,8 +10,6 @@ app = Flask(__name__)
 
 is_working = False
 default_venv_name = 'venv_server_node'
-UPLOAD_FOLDER = '/uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 def execute(cmd: Union[list, str]):
