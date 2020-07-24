@@ -41,11 +41,33 @@ def is_node():
 
 @app.route('/info', methods=['GET'])
 def info():
-    data = {'Architecture': '', 'CPUopmodes': '', 'ByteOrder': '', 'CPUs': 0, 'OnlineCPUslist': '',
-            'Threadspercore': 0, 'Corespersocket': 0, 'Sockets': 0, 'NUMAnodes': 0, 'VendorID': '',
-            'CPUfamily': 0, 'Model': 0, 'Modelname': '', 'Stepping': 0, 'CPUMHz': 0, 'CPUmaxMHz': 0, 'CPUminMHz': 0,
-            'BogoMIPS': 0, 'Virtualization': '', 'L1dcache': '', 'L1icache': '', 'L2cache': '', 'L3cache': '',
-            'NUMAnode0CPUs': '', 'System': platform.system()}
+    data = {
+        'Architecture': '',
+        'CPUopmodes': '',
+        'ByteOrder': '',
+        'CPUs': 0,
+        'OnlineCPUslist': '',
+        'Threadspercore': 0,
+        'Corespersocket': 0,
+        'Sockets': 0,
+        'NUMAnodes': 0,
+        'VendorID': '',
+        'CPUfamily': 0,
+        'Model': 0,
+        'Modelname': '',
+        'Stepping': 0,
+        'CPUMHz': 0,
+        'CPUmaxMHz': 0,
+        'CPUminMHz': 0,
+        'BogoMIPS': 0,
+        'Virtualization': '',
+        'L1dcache': '',
+        'L1icache': '',
+        'L2cache': '',
+        'L3cache': '',
+        'NUMAnode0CPUs': '',
+        'System': platform.system()
+    }
     if data['System'] == 'Windows':
         data['CPUmaxMHz'] = 0
         data['CPUs'] = multiprocessing.cpu_count()
